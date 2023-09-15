@@ -3,6 +3,7 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom';
 function Login() {
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState(null);
     const [login,setLogin] = useState(
       {
         username : "",
@@ -11,8 +12,15 @@ function Login() {
     )
     const Login = (e) => {
       e.preventDefault();
-      console.log("Logging in with username:", login.username);
-      console.log("Password:", login.password);
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find((user) => user.username === login.username && user.password === login.password);
+
+      if (user) {
+        console.log('Login successful');
+        navigate("/home");
+      } else {
+        setLoginError('Invalid credentials');
+      }
     };
     
     const handleChange = (e) => {
@@ -28,9 +36,8 @@ function Login() {
         <div className='LoginBox'>
           <div className='LoginBoxTop'>
             <div className='LoginBoxTitle'>
-              <p>Welcome to </p><h2>RecipeHub</h2>
-              <p>Continue with where you left
-                without any disturbance
+              <h2>RecipeHub</h2>
+              <p>Start from where You left. Become a Recipe Miner now..!
               </p>
             </div>
             <form className="LoginForm" onSubmit={Login}>
@@ -51,6 +58,7 @@ function Login() {
                 required
               />
               <button type="submit">Login</button>
+              {loginError && <div className="ErrorMessage">{loginError}</div>}
             </form>
           </div>
           <div className='LoginBoxBottom'>

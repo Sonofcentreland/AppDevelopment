@@ -12,6 +12,7 @@
     flex-direction: column;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
 }
 .LoginBorder button,input {
     margin: 0;
@@ -23,6 +24,7 @@
     text-align: inherit;
 }
 .LoginBorder{
+    position: relative;
     height: 100vh;
 
     display: flex;
@@ -35,37 +37,42 @@
 }
 
 .LoginBox{
-    width: 400px;
-    height: 80vh;
+    position: absolute;
+    right: 10%;
+    width: 500px;
+    height: 85vh;
 }
 .LoginBoxTop{
-    height: 85%;
+    height: 88%;
     width: 100%;
     font-weight: bolder;
     font-size: 25px;
     border: 1px solid rgba(128, 128, 128, 0.582);
-    background-color: white;
+    background-color: rgba(1, 13, 31, 0.801);
 }
 .LoginBoxBottom{
-    height: 11%;
+    height: 10%;
     width: 100%;
     margin: 2% 0;
     border: 1px solid rgba(128, 128, 128, 0.582);
-    background-color: white;
+    background-color: rgba(1, 13, 31, 0.801);
 }
 .LoginBoxBottom span{
-    color: blue;
+    color: rgb(0, 255, 115);
     cursor: pointer;
 }
 .LoginBoxTitle{
-    width: 100%;
+    width: 90%;
     height: 30%;
+    display: flex;
+    align-items: flex-start;
 }
 .LoginBoxTitle p{
     font-size: 14px;
+    text-align: left;
 }
 .LoginBoxTitle h2{
-    color: red;
+    color: rgb(220, 252, 105);
 }
 .LoginForm{
     width: 100%;
@@ -76,9 +83,9 @@
 
 .LoginForm input{
     width: 90%;
-    height: 12%;
-    margin: 3% 5%;
-    border: 1px solid grey;
+    height: 14%;
+    margin: 1% 5%;
+    border: 1px solid white;
     border-radius: 2px;
     text-align: left;
     text-indent: 10px;
@@ -86,15 +93,16 @@
 }
 .LoginForm button{
     width: 90%;
-    height: 12%;
+    height: 14%;
     margin: 5%;
     border-radius: 2px;
     border-radius: 5px;
     text-align: left;
     text-indent: 10px;
     font-size: 18px;
-    background-color: rgb(0, 60, 255);
-    color: white;
+    background-color: rgb(0, 247, 255);
+    color: rgb(29, 1, 32);
+    font-weight: 800;
     cursor: pointer;
 }
 .LoginForm input:focus{
@@ -102,4 +110,9 @@
 }
 .LoginForm button:hover{
     background-color: red;
+    color: white;
+}
+
+.ErrorMessage{
+    font-size: 20px;
 }
