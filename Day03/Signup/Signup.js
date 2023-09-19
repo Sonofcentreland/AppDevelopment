@@ -156,16 +156,7 @@ function Signup() {
                </div>
             </>
           )}
-          {error.message && 
-               <div className='SignupBoxErrorMessage'>
-                    <div className='errormessage-text'>
-                         <div className='errormessage-svg'>
-                         </div>
-                         {error.message}
-                    </div>
-               </div>
-          }
-                    
+          {error.message && <p style={{ color: 'red' }}>{error.message}</p>}
         </form>
 
         <div className='SignupBoxFooter'></div>

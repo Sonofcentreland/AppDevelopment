@@ -99,24 +99,7 @@
 .SignupBoxButton button{
      cursor: pointer;
 }
-.SignupBoxErrorMessage{
-     width: 60%;
-     height: 10%;
-     font-size: 14px;
-     justify-content: space-around;
-}
-.errormessage-svg{
-     height: 50%;
-     width: 8%;
-     background-image: url('../../Images/svg/warning.svg');
-     background-size: contain;
-     background-repeat: no-repeat;
 
-}
-.errormessage-text{
-     height: 50%;
-     width: 100%;
-}
 .SignupBoxOrLine {
      width: 60%;
      height: 10;
