@@ -1,0 +1,82 @@
+.sidebar.border *{
+     padding: 0;
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: left;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebar.border{
+     width: 100%;
+     height: 100%;
+}
+.sidebar.box{
+     width: 100%;
+     height: 100%;
+     gap: 20px;
+}
+.sidebar.userinfo{
+     gap: 8px;
+     width: 100%;
+     height: 20%;
+}
+.sidebar.userinfo .image{ 
+     width: 120px;
+     height: 120px; 
+     background-image: url('../../Images/png/logo-tm/logo-color.png');
+     background-size: contain;
+     background-repeat: no-repeat;
+     border-radius: 50%;
+}
+.sidebar.userinfo .text{ 
+     font-weight: bolder;
+     font-size: 1.2rem;
+}
+
+.sidebar.links1{
+     gap: 8px;
+     width: 100%;
+     height: 55%;
+}
+.sidebar .link{
+     flex-direction: row;
+     width: 90%;
+     height: 50px;
+     border: 1px solid rgba(0, 174, 255, 0.356);
+     border-radius: 5px;
+     cursor: pointer;
+}
+.sidebar .link:hover{
+     background-color: rgb(0, 174, 255);
+     color: white;
+     transition: 0.4s;
+}
+.sidebar .link .image{
+     height: 100%;
+     width: 30%;
+}
+.sidebar .link .text{
+     justify-content: center;
+     align-items: flex-start;
+     height: 100%;
+     width: 70%;
+}
+
+.sidebar.links2{
+     gap: 8px;
+     width: 100%;
+     height: 15%;
+}
+.sidebar.links2 .name{
+     justify-content: center;
+     width: 90%;
+     height: 50px;
+     border: 1px solid rgba(255, 0, 255, 0.315);
+     border-radius: 5px;
+}
+.sidebar.links2 .name:hover{
+     background-color: rgb(255, 0, 255);
+     color: white;
+     transition: 0.4s;
+}

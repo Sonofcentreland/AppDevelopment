@@ -1,0 +1,30 @@
+.DashboardBorder *{
+     padding: 0;
+     margin: 0;
+}
+.DashboardBorder{
+     display: grid;
+     height: 100vh;
+     grid-template-columns: 1fr 6fr;
+     grid-template-rows: 0.4fr 4fr 0.6fr;
+     grid-template-areas:
+          "sidebar navbar"
+          "sidebar content"
+          "sidebar footer"
+}
+
+.DashboardNavBar{
+     background-color: aliceblue;
+     grid-area: navbar;
+}
+.DashboardSideBar{
+     grid-area: sidebar;
+}
+.DashboardContent{
+     background-color: midnightblue;
+     grid-area: content;
+}
+.DashboardFooter{
+     background-color: hotpink;
+     grid-area: footer;
+}
