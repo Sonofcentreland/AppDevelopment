@@ -3,11 +3,10 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom';
 import Validation from '../../Component Styles/Validation';
 import CommonScreenSizes from '../../Component Styles/ComponentStyles';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUser, signin } from '../../Redux/UserSlice';
+import { useDispatch } from 'react-redux';
+import { signin } from '../../Redux/UserSlice';
 function Login() {
      const dispath = useDispatch();
-     const users = useSelector(selectUser);
      const navigate = useNavigate();
      const {BoxStyle} = CommonScreenSizes({size: '1000:500'})
      const [error, setError] = useState({});
@@ -71,7 +70,7 @@ function Login() {
              <div className={`LoginBoxInput input-1 ${error.password ? 'LoginBoxInvalidInput' : ''}`}>
                <input
                     onChange={handleChange}
-                    type='text'
+                    type='password'
                     name='password'
                     id='password'
                     value={Login.password}

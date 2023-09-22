@@ -15,76 +15,105 @@ import lombok.NoArgsConstructor;
 @Entity 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Shortfacts
+public class Recipe
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int sid;
+	private int rid;
 	private String title;
-	private String description;
-	private String content;
+	private String ingredients;
+	private String procedure;
+	private String value;
+	private String tips;
 	@Lob
 	private byte[] image;
 	private String author;
 	
-	public int getSid() {
-		return sid;
+	public int getRid() {
+		return rid;
 	}
-	public void setSid(int sid) {
-		this.sid = sid;
+
+	public void setRid(int rid) {
+		this.rid = rid;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDescription() {
-		return description;
+
+	public String getIngredients() {
+		return ingredients;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
 	}
-	public String getContent() {
-		return content;
+
+	public String getProcedure() {
+		return procedure;
 	}
-	public void setContent(String content) {
-		this.content = content;
+
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
 	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public String getTips() {
+		return tips;
+	}
+
+	public void setTips(String tips) {
+		this.tips = tips;
+	}
+
 	public byte[] getImage() {
 		return image;
 	}
+
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
+
 	public String getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
+
 	//Method to get data from ShortfactUpload and save it in Shortfacts
 	public void setShortfactData(FactData data) throws IOException {
 		this.title = data.getTitle();
-		this.description = data.getDescription();
-		this.content = data.getContent();
+		this.ingredients = data.getDescription();
+		this.procedure = data.getContent();
+		this.value = data.getContent();
+		this.tips = data.getContent();
 		this.image = ImageEdit.compressImage(data.getImage().getBytes());
 		this.author = data.getAuthor();
 	}
 	
-	public void setShortFact(Shortfacts shortfact) {
-		this.sid = shortfact.sid;
+	public void setShortFact(Recipe shortfact) {
+		this.rid = shortfact.rid;
 		this.title = shortfact.getTitle();
-		this.description = shortfact.getDescription();
-		this.content = shortfact.getContent();
+		this.ingredients = shortfact.getIngredients();
+		this.procedure = shortfact.getProcedure();
+		this.value = shortfact.getValue();
+		this.tips = shortfact.getTips();
 		this.image = ImageEdit.decompressImage(shortfact.getImage());
 		this.author = shortfact.getAuthor();
 	}
 	
-	@Override
-	public String toString() {
-		return "Shortfacts [sid=" + sid + ", title=" + title + ", description=" + description + ", content=" + content
-				+ ", image=" + Arrays.toString(ImageEdit.decompressImage(image)) + ", author=" + author + "]";
-	}
+	
 }

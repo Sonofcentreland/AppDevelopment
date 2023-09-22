@@ -5,14 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.jeeva.exception.ShortfactNotfoundException;
+import com.jeeva.exception.RecipeNotfoundException;
 import com.jeeva.exception.UserNotFoundException;
 
 @ControllerAdvice
 public class ExceptionController
 {
-	@ExceptionHandler(value = ShortfactNotfoundException.class)
-	public ResponseEntity<Object> exception(ShortfactNotfoundException exception)
+	@ExceptionHandler(value = RecipeNotfoundException.class)
+	public ResponseEntity<Object> exception(RecipeNotfoundException exception)
 	{
 		return new ResponseEntity<>("Sorry, The Fact you looking for is either been deleted or not been created yet.", HttpStatus.NOT_FOUND);
 	}

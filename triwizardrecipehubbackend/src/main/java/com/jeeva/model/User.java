@@ -10,11 +10,12 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int uid;
-	private String username;
 	private String fullname;
-	private String password;
+	private String username;
 	private String email;
+	private String mobile;
 	private String profileURL;
+	private String password;
 	
 	public int getUid() {
 		return uid;
@@ -45,6 +46,12 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	public String getProfileURL() {
 		return profileURL;

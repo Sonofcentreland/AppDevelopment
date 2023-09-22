@@ -17,18 +17,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jeeva.exception.ShortfactNotfoundException;
+import com.jeeva.exception.RecipeNotfoundException;
 import com.jeeva.model.FactData;
-import com.jeeva.model.Shortfacts;
-import com.jeeva.service.ShortfactsService;
+import com.jeeva.model.Recipe;
+import com.jeeva.service.RecipeService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/Shortfacts")
-public class ShortfactsController
+@RequestMapping("/Recipes")
+public class RecipeController
 {
 	@Autowired
-	private ShortfactsService shortfactService;
+	private RecipeService shortfactService;
 	
 	@GetMapping("/Hello")
 	public String sayHello(){
@@ -38,24 +38,24 @@ public class ShortfactsController
 	@PostMapping("/create")
 	public ResponseEntity<?> createShortfact(@ModelAttribute FactData Shortfact)throws IOException
 	{
-		Shortfacts shortfact = shortfactService.createShortfact(Shortfact);
-		return new ResponseEntity<>("Shortfact is created successfully with id = " +shortfact.getSid(), HttpStatus.CREATED);
+		Recipe shortfact = shortfactService.createShortfact(Shortfact);
+		return new ResponseEntity<>("Shortfact is created successfully with id = " +shortfact.getRid(), HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update/{id}")
 	public ResponseEntity<?> updateShortfact(@PathVariable int id,
-			@RequestBody Shortfacts Shortfact)
+			@RequestBody Recipe Shortfact)
 	{
 		boolean isShortfactExist = shortfactService.isShortfactExist(id);
 		if (isShortfactExist)
 		{
-			Shortfact.setSid(id);
+			Shortfact.setRid(id);
 			shortfactService.updateShortfact(Shortfact);
 			return new ResponseEntity<>("Shortfact is updated successsfully", HttpStatus.OK);
 		}
 		else
 		{
-			throw new ShortfactNotfoundException();
+			throw new RecipeNotfoundException();
 		}
 
 	}
@@ -70,14 +70,14 @@ public class ShortfactsController
 		}
 		else
 		{
-			throw new ShortfactNotfoundException();
+			throw new RecipeNotfoundException();
 		}
 	}
 
 	@GetMapping("/getall")
 	public ResponseEntity<?> getShortfacts()
 	{
-		List<Shortfacts> ShortfactList = shortfactService.getShortfacts();
+		List<Recipe> ShortfactList = shortfactService.getShortfacts();
 		return new ResponseEntity<>(ShortfactList, HttpStatus.OK);
 	}
 
@@ -92,7 +92,7 @@ public class ShortfactsController
 		}
 		else
 		{
-			throw new ShortfactNotfoundException();
+			throw new RecipeNotfoundException();
 		}
 
 	}

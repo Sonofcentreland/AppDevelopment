@@ -8,45 +8,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jeeva.model.FactData;
-import com.jeeva.model.Shortfacts;
-import com.jeeva.repository.ShortfactsRepository;
-import com.jeeva.service.ShortfactsService;
+import com.jeeva.model.Recipe;
+import com.jeeva.repository.RecipeRepository;
+import com.jeeva.service.RecipeService;
 
 @Service
-public class ShortfactsServiceImpl implements ShortfactsService
+public class RecipeServiceImpl implements RecipeService
 {
 
 	@Autowired
-	private ShortfactsRepository shortfactRepository;
+	private RecipeRepository shortfactRepository;
 
 	@Override
-	public Shortfacts createShortfact(FactData fact) throws IOException
+	public Recipe createShortfact(FactData fact) throws IOException
 	{
-		Shortfacts shortfact = new Shortfacts();
+		Recipe shortfact = new Recipe();
 		shortfact.setShortfactData(fact);
 		return shortfactRepository.save(shortfact);
 	}
 
 	@Override
-	public void updateShortfact(Shortfacts shortfact)
+	public void updateShortfact(Recipe shortfact)
 	{
 		shortfactRepository.save(shortfact);
 	}
 	
 	@Override
-	public Shortfacts getShortfact(int id)
+	public Recipe getShortfact(int id)
 	{
-		Optional<Shortfacts> optional = shortfactRepository.findById(id);
-		Shortfacts shortfact = new Shortfacts();
+		Optional<Recipe> optional = shortfactRepository.findById(id);
+		Recipe shortfact = new Recipe();
 		shortfact.setShortFact(optional.get());
 		return shortfact;
 		
 	}
 
 	@Override
-	public List<Shortfacts> getShortfacts()
+	public List<Recipe> getShortfacts()
 	{
-		return (List<Shortfacts>)shortfactRepository.findAll();
+		return (List<Recipe>)shortfactRepository.findAll();
 	}
 
 	@Override
