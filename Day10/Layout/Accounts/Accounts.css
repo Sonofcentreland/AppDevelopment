@@ -1,0 +1,30 @@
+.accounts.border *{
+     padding: 0;
+     margin: 0;
+}
+.accounts.border{
+     display: grid;
+     height: 100vh;
+     grid-template-columns: 1fr 6fr;
+     grid-template-rows: 0.4fr 4fr 0.6fr;
+     grid-template-areas:
+          "sidebar navbar"
+          "sidebar content"
+          "sidebar footer"
+}
+
+.accounts.navbar{
+     background-color: aliceblue;
+     grid-area: navbar;
+}
+.accounts.sidebar{
+     grid-area: sidebar;
+}
+.accounts.content{
+     background-color: midnightblue;
+     grid-area: content;
+}
+.accounts.footer{
+     background-color: hotpink;
+     grid-area: footer;
+}
