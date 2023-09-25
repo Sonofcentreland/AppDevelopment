@@ -1,9 +1,12 @@
 package com.jeeva.model;
 
+import java.io.IOException;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class User {
@@ -14,7 +17,8 @@ public class User {
 	private String username;
 	private String email;
 	private String mobile;
-	private String profileURL;
+	@Lob
+	private byte[] profile;
 	private String password;
 	
 	public int getUid() {
@@ -53,16 +57,29 @@ public class User {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	public String getProfileURL() {
-		return profileURL;
+	public byte[] getProfile() {
+		return profile;
 	}
-	public void setProfileURL(String profileURL) {
-		this.profileURL = profileURL;
+	public void setProfile(byte[] profile) {
+		this.profile = profile;
 	}
 	
-	@Override
-	public String toString() {
-		return "User [uid=" + uid + ", username=" + username + ", fullname=" + fullname + ", password=" + password
-				+ ", email=" + email + ", profileURL=" + profileURL + "]";
+	public void setUserData(UserForm user) throws IOException {
+		this.fullname = user.getFullname();
+		this.username = user.getUsername();
+		this.email = user.getEmail();
+		this.mobile = user.getMobile();
+		this.profile = ImageEdit.compressImage(user.getProfile().getBytes());
+		this.password = user.getPassword();
+	}
+	
+	public void setUser(User user) {
+		this.uid = user.getUid();
+		this.fullname = user.getFullname();
+		this.username = user.getUsername();
+		this.email = user.getEmail();
+		this.mobile = user.getMobile();
+		this.profile = ImageEdit.decompressImage(user.getProfile());
+		this.password = user.getPassword();
 	}
 }

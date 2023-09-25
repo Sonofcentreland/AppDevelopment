@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jeeva.model.FactData;
+import com.jeeva.model.RecipeForm;
 import com.jeeva.model.Recipe;
 import com.jeeva.repository.RecipeRepository;
 import com.jeeva.service.RecipeService;
@@ -17,47 +17,46 @@ public class RecipeServiceImpl implements RecipeService
 {
 
 	@Autowired
-	private RecipeRepository shortfactRepository;
+	private RecipeRepository recipeRepository;
 
 	@Override
-	public Recipe createShortfact(FactData fact) throws IOException
+	public Recipe createRecipe(RecipeForm form) throws IOException
 	{
-		Recipe shortfact = new Recipe();
-		shortfact.setShortfactData(fact);
-		return shortfactRepository.save(shortfact);
+		Recipe recipe = new Recipe();
+		recipe.setRecipeData(form);
+		return recipeRepository.save(recipe);
 	}
 
 	@Override
-	public void updateShortfact(Recipe shortfact)
+	public void updateRecipe(Recipe recipe)
 	{
-		shortfactRepository.save(shortfact);
+		recipeRepository.save(recipe);
 	}
 	
 	@Override
-	public Recipe getShortfact(int id)
+	public Recipe getRecipe(int id)
 	{
-		Optional<Recipe> optional = shortfactRepository.findById(id);
-		Recipe shortfact = new Recipe();
-		shortfact.setShortFact(optional.get());
-		return shortfact;
-		
+		Optional<Recipe> optional = recipeRepository.findById(id);
+		Recipe recipe = new Recipe();
+		recipe.setRecipe(optional.get());
+		return recipe;
 	}
 
 	@Override
-	public List<Recipe> getShortfacts()
+	public List<Recipe> getRecipes()
 	{
-		return (List<Recipe>)shortfactRepository.findAll();
+		return (List<Recipe>)recipeRepository.findAll();
 	}
 
 	@Override
-	public void deleteShortfact(int id)
+	public void deleteRecipe(int id)
 	{
-		shortfactRepository.deleteById(id);
+		recipeRepository.deleteById(id);
 	}
 
 	@Override
-	public boolean isShortfactExist(int id)
+	public boolean isRecipeExist(int id)
 	{
-		return shortfactRepository.existsById(id);
+		return recipeRepository.existsById(id);
 	}
 }

@@ -1,10 +1,13 @@
 package com.jeeva.service.impl;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jeeva.model.Login;
 import com.jeeva.model.User;
+import com.jeeva.model.UserForm;
 import com.jeeva.repository.UserRepository;
 import com.jeeva.service.UserService;
 
@@ -30,8 +33,10 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void signup(User user) {
-		userRepository.save(user);
+	public User signup(UserForm form) throws IOException{
+		User user = new User();
+		user.setUserData(form);
+		return userRepository.save(user);
 	}
 	
 	@Override

@@ -1,7 +1,6 @@
 package com.jeeva.model;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +21,7 @@ public class Recipe
 	private int rid;
 	private String title;
 	private String ingredients;
-	private String procedure;
+	private String instructions;
 	private String value;
 	private String tips;
 	@Lob
@@ -53,12 +52,12 @@ public class Recipe
 		this.ingredients = ingredients;
 	}
 
-	public String getProcedure() {
-		return procedure;
+	public String getInstructions() {
+		return instructions;
 	}
 
-	public void setProcedure(String procedure) {
-		this.procedure = procedure;
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
 	}
 
 	public String getValue() {
@@ -93,27 +92,25 @@ public class Recipe
 		this.author = author;
 	}
 
-	//Method to get data from ShortfactUpload and save it in Shortfacts
-	public void setShortfactData(FactData data) throws IOException {
+	//Method to get data from RecipeForm and save it in Recipe
+	public void setRecipeData(RecipeForm data) throws IOException {
 		this.title = data.getTitle();
-		this.ingredients = data.getDescription();
-		this.procedure = data.getContent();
-		this.value = data.getContent();
-		this.tips = data.getContent();
+		this.ingredients = data.getIngredients();
+		this.instructions = data.getInstructions();
+		this.value = data.getValue();
+		this.tips = data.getTips();
 		this.image = ImageEdit.compressImage(data.getImage().getBytes());
 		this.author = data.getAuthor();
 	}
 	
-	public void setShortFact(Recipe shortfact) {
-		this.rid = shortfact.rid;
-		this.title = shortfact.getTitle();
-		this.ingredients = shortfact.getIngredients();
-		this.procedure = shortfact.getProcedure();
-		this.value = shortfact.getValue();
-		this.tips = shortfact.getTips();
-		this.image = ImageEdit.decompressImage(shortfact.getImage());
-		this.author = shortfact.getAuthor();
+	public void setRecipe(Recipe recipe) {
+		this.rid = recipe.rid;
+		this.title = recipe.getTitle();
+		this.ingredients = recipe.getIngredients();
+		this.instructions = recipe.getInstructions();
+		this.value = recipe.getValue();
+		this.tips = recipe.getTips();
+		this.image = ImageEdit.decompressImage(recipe.getImage());
+		this.author = recipe.getAuthor();
 	}
-	
-	
 }

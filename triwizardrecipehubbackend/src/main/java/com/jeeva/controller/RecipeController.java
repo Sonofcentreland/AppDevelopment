@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jeeva.exception.RecipeNotfoundException;
-import com.jeeva.model.FactData;
+import com.jeeva.model.RecipeForm;
 import com.jeeva.model.Recipe;
 import com.jeeva.service.RecipeService;
 
@@ -28,7 +28,7 @@ import com.jeeva.service.RecipeService;
 public class RecipeController
 {
 	@Autowired
-	private RecipeService shortfactService;
+	private RecipeService RecipeService;
 	
 	@GetMapping("/Hello")
 	public String sayHello(){
@@ -36,22 +36,22 @@ public class RecipeController
 	}
 
 	@PostMapping("/create")
-	public ResponseEntity<?> createShortfact(@ModelAttribute FactData Shortfact)throws IOException
+	public ResponseEntity<?> createRecipe(@ModelAttribute RecipeForm recipe)throws IOException
 	{
-		Recipe shortfact = shortfactService.createShortfact(Shortfact);
-		return new ResponseEntity<>("Shortfact is created successfully with id = " +shortfact.getRid(), HttpStatus.CREATED);
+		Recipe Recipe = RecipeService.createRecipe(recipe);
+		return new ResponseEntity<>("Recipe is created successfully with id = " +Recipe.getRid(), HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update/{id}")
-	public ResponseEntity<?> updateShortfact(@PathVariable int id,
-			@RequestBody Recipe Shortfact)
+	public ResponseEntity<?> updateRecipe(@PathVariable int id,
+			@RequestBody Recipe recipe)
 	{
-		boolean isShortfactExist = shortfactService.isShortfactExist(id);
-		if (isShortfactExist)
+		boolean isRecipeExist = RecipeService.isRecipeExist(id);
+		if (isRecipeExist)
 		{
-			Shortfact.setRid(id);
-			shortfactService.updateShortfact(Shortfact);
-			return new ResponseEntity<>("Shortfact is updated successsfully", HttpStatus.OK);
+			recipe.setRid(id);
+			RecipeService.updateRecipe(recipe);
+			return new ResponseEntity<>("Recipe is updated successsfully", HttpStatus.OK);
 		}
 		else
 		{
@@ -63,10 +63,10 @@ public class RecipeController
 	@GetMapping("/get/{id}")
 	public ResponseEntity<?> getPhoto(@PathVariable int id)
 	{
-		boolean isShortfactExist = shortfactService.isShortfactExist(id);
-		if (isShortfactExist)
+		boolean isRecipeExist = RecipeService.isRecipeExist(id);
+		if (isRecipeExist)
 		{
-			return new ResponseEntity<>(shortfactService.getShortfact(id), HttpStatus.OK);
+			return new ResponseEntity<>(RecipeService.getRecipe(id), HttpStatus.OK);
 		}
 		else
 		{
@@ -75,20 +75,20 @@ public class RecipeController
 	}
 
 	@GetMapping("/getall")
-	public ResponseEntity<?> getShortfacts()
+	public ResponseEntity<?> getRecipes()
 	{
-		List<Recipe> ShortfactList = shortfactService.getShortfacts();
-		return new ResponseEntity<>(ShortfactList, HttpStatus.OK);
+		List<Recipe> RecipeList = RecipeService.getRecipes();
+		return new ResponseEntity<>(RecipeList, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteShortfact(@PathVariable int id) throws IOException
+	public ResponseEntity<?> deleteRecipe(@PathVariable int id) throws IOException
 	{
-		boolean isShortfactExist = shortfactService.isShortfactExist(id);
-		if (isShortfactExist)
+		boolean isRecipeExist = RecipeService.isRecipeExist(id);
+		if (isRecipeExist)
 		{
-			shortfactService.deleteShortfact(id);
-			return new ResponseEntity<>("Shortfact is deleted successsfully", HttpStatus.OK);
+			RecipeService.deleteRecipe(id);
+			return new ResponseEntity<>("Recipe is deleted successsfully", HttpStatus.OK);
 		}
 		else
 		{

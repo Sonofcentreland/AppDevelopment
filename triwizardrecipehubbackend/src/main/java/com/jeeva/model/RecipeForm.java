@@ -7,11 +7,13 @@ import lombok.RequiredArgsConstructor;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class FactData {
+public class RecipeForm {
 	
 	private String title;
-	private String description;
-	private String content;
+	private String ingredients;
+	private String instructions;
+	private String tips;
+	private String value;
 	private MultipartFile image;
 	private String author;
 	
@@ -21,17 +23,29 @@ public class FactData {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDescription() {
-		return description;
+	public String getIngredients() {
+		return ingredients;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
 	}
-	public String getContent() {
-		return content;
+	public String getInstructions() {
+		return instructions;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
+	}
+	public String getTips() {
+		return tips;
+	}
+	public void setTips(String tips) {
+		this.tips = tips;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
 	}
 	public MultipartFile getImage() {
 		return image;

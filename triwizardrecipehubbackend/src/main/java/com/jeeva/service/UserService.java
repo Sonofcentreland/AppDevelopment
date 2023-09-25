@@ -1,11 +1,14 @@
 package com.jeeva.service;
 
+import java.io.IOException;
+
 import com.jeeva.model.Login;
 import com.jeeva.model.User;
+import com.jeeva.model.UserForm;
 
 public interface UserService {
 	
-	public void signup(User user);
+	public abstract User signup(UserForm user) throws IOException;
 	
 	public Login login(String username,String password);
 	

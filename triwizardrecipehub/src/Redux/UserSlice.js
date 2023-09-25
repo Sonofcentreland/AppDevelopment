@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { User } from "../Library/Services/UserServices";
 
 export const UserSlice = createSlice({
   name: "user",
@@ -11,7 +12,7 @@ export const UserSlice = createSlice({
       console.log(action.payload);
     },
     logout: (state) => {
-      state.user = null;
+      state.user = (new User().onLogin());
     },
   },
 });
