@@ -13,6 +13,7 @@
      height: 100%;
 }
 .sidebar.close{
+     justify-content: center;
      width: 30%;
      height: 100%;
      background-color: aqua;
@@ -20,15 +21,28 @@
 }
 
 .sidebar.close .sidebar.header{
+     width: 100%;
      justify-content: center;
 }
 .sidebar.close .sidebar.header .button{
-     border-radius: 50%;
+     align-self: center;
+     border-radius: 5px;
+     transform: rotate(0deg);
      color: white;
 }
 
 .sidebar.close .text{
      visibility: hidden;
+     width: 0;
+     height: 0;
+}
+.sidebar.close .link{
+     width: 100%;
+     aspect-ratio: 1/1;
+}
+.sidebar.close .link .icon{
+     width: 100%;
+     aspect-ratio: 1/1;
 }
 .sidebar.open{
      width: 100%;
@@ -52,8 +66,18 @@
 .sidebar.header .button{
      height: 80%;
      aspect-ratio: 1/1;
-     background-color: black;
-     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: rgb(254,70,0);
+     color: white;
+     font-size: 28px;
+     border-radius: 50%;
+     transform: rotate(45deg);
+}
+.sidebar.header .button .text{
+     height: 100%;
+     width: 100%;
 }
 .sidebar.header .image{
      height: 80%;

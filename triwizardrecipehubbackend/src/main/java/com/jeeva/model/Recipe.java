@@ -24,6 +24,7 @@ public class Recipe
 	private String instructions;
 	private String value;
 	private String tips;
+	private String[] genre;
 	@Lob
 	private byte[] image;
 	private String author;
@@ -75,6 +76,14 @@ public class Recipe
 	public void setTips(String tips) {
 		this.tips = tips;
 	}
+	
+	public String[] getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String[] genre) {
+		this.genre = genre;
+	}
 
 	public byte[] getImage() {
 		return image;
@@ -99,6 +108,7 @@ public class Recipe
 		this.instructions = data.getInstructions();
 		this.value = data.getValue();
 		this.tips = data.getTips();
+		this.genre = data.getGenre();
 		this.image = ImageEdit.compressImage(data.getImage().getBytes());
 		this.author = data.getAuthor();
 	}
@@ -110,6 +120,7 @@ public class Recipe
 		this.instructions = recipe.getInstructions();
 		this.value = recipe.getValue();
 		this.tips = recipe.getTips();
+		this.genre = recipe.getGenre();
 		this.image = ImageEdit.decompressImage(recipe.getImage());
 		this.author = recipe.getAuthor();
 	}

@@ -1,12 +1,13 @@
 class Recipe{
 
-     rid = ""; title = ""; ingredients = ""; instructions = ""; tips = ""; value = ""; image = null; author = "";
+     rid = ""; title = ""; ingredients = ""; genre = []; instructions = ""; tips = ""; value = ""; image = null; author = "";
  
-     getRecipeAsForm(){
+     RecipeForm(){
          const RecipeForm = new FormData();
  
          RecipeForm.append("title", this.title);
          RecipeForm.append("ingredients", this.ingredients);
+         RecipeForm.append("genre", this.genre);
          RecipeForm.append("instructions", this.instructions);
          RecipeForm.append("tips", this.tips);
          RecipeForm.append("value", this.value);
@@ -15,4 +16,4 @@ class Recipe{
  
          return RecipeForm;
      }
- }
+}

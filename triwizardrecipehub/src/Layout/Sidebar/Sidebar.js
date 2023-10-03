@@ -28,12 +28,16 @@ function Sidebar() {
           <>
                <div className={`sidebar border ${open ? 'close' : 'open'}`}>
                     <div className="sidebar header">
-                         <ButtonBox name="button" text="+" onClick={handleSize}/>
+                         <ButtonBox 
+                              onClick={handleSize} 
+                              name="dashboard button" 
+                              text="+"
+                         />
                     </div>
                     <div className="sidebar box">
                          <div className={`sidebar links1 ${color ? 'blue' : 'red'}`}>
                               <LinkBox 
-                                   onClick={()=>{navigate('/accounts')}} 
+                                   onClick={()=>{navigate('/dashboard')}} 
                                    name="dashboard link" 
                                    icon={<DashboardIcon/>} 
                                    text="Dashboard"

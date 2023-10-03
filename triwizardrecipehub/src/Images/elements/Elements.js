@@ -1,5 +1,18 @@
 import PropTypes from 'prop-types';
 
+const RecipeBox = ({name, image, title, ingredients, genre, instructions, tips, value, author}) => {
+     return (
+          <div className={name}>
+               { image && 
+                    <div className="image" onClick={onClick}>
+                         <img src={image} alt=''/>
+                    </div> 
+               }
+               { title  && <div className="text">  { text  } </div> }
+          </div>
+        );
+}
+
 const LinkBox = ({ name, text, icon, onClick }) => {
      const linkBox = {
           cursor: "pointer",

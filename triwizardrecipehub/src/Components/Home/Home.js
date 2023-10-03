@@ -94,7 +94,7 @@ function Home() {
                          <p>Support</p>
                          <LinkBox name="box" text="Product Support"/>
                          <LinkBox name="box" text="Community"/>
-                         <LinkBox name="box" text="FAQ"/>
+                         <LinkBox name="box" text="FAQ" onClick={()=>{navigate('/faq')}}/>
                     </div>
                </div>   
                <div className="bottom">

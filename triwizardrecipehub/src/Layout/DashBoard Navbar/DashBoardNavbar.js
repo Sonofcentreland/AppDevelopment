@@ -24,9 +24,9 @@ function DashboardNavbar() {
                          </div>
                          <div className="box center">
                               <LinkBox name='link' text='Home' onClick={()=>{navigate('/')}}/>
-                              <LinkBox name='link' text='Recipes' onClick={()=>{navigate('/')}}/>
-                              <LinkBox name='link' text='About Us' onClick={()=>{navigate('/about-us')}}/>
-                              <LinkBox name='link' text='Contact' onClick={()=>{navigate('/contact')}}/>
+                              <LinkBox name='link' text='Accounts' onClick={()=>{navigate('/')}}/>
+                              <LinkBox name='link' text='Dashboard' onClick={()=>{navigate('/about-us')}}/>
+                              <LinkBox name='link' text='Reports' onClick={()=>{navigate('/contact')}}/>
                          </div>
                          <div className="box right"> 
                               <div className="left" onClick={handleLogout}>

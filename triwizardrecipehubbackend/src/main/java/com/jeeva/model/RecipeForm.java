@@ -14,6 +14,7 @@ public class RecipeForm {
 	private String instructions;
 	private String tips;
 	private String value;
+	private String[] genre;
 	private MultipartFile image;
 	private String author;
 	
@@ -46,6 +47,12 @@ public class RecipeForm {
 	}
 	public void setValue(String value) {
 		this.value = value;
+	}
+	public String[] getGenre() {
+		return genre;
+	}
+	public void setGenre(String[] genre) {
+		this.genre = genre;
 	}
 	public MultipartFile getImage() {
 		return image;
