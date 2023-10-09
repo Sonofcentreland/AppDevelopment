@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import CommonScreenSizes from '../../Component Styles/ComponentStyles';
 import { useDispatch } from 'react-redux';
 import { signin } from '../../Redux/UserSlice';
-import { User } from '../../Library/Services/UserServices';
+import { User, UserServices } from '../../Library/Services/UserServices';
+import axios from 'axios';
 function Login() {
      const dispath = useDispatch();
      const navigate = useNavigate();
@@ -22,9 +23,14 @@ function Login() {
           e.preventDefault();
 
           handleValidation(() => {
-               console.log('Form submitted successfully!',login);
-               dispath(signin(login));
-               navigate('/dashboard');
+              //  dispath(signin(login));
+              axios.post("http://localhost:8808/recipehub/auth/login",{
+                "username":"sunshine",
+                "password":"rcnikani"
+              })
+               .then(response => {
+                console.log(response);
+              })
                setLogin(new User().onLogin());
             });
      };

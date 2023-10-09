@@ -16,6 +16,22 @@ class User{
         
           return UserForm;
      }
+
+     getRecipeForm() {
+          const RecipeForm = new FormData();
+          const emptyImage = new File([new Uint8Array(0)], 'empty-image.png', { type: 'image/png' });
+
+          RecipeForm.append('title',"");
+          RecipeForm.append('ingredients',"");
+          RecipeForm.append('instructions',"");
+          RecipeForm.append('tips',"");
+          RecipeForm.append('value',"");
+          RecipeForm.append('image',"");
+          RecipeForm.append('authorId',"");
+          RecipeForm.append('genreIds',"");
+ 
+          return RecipeForm;
+     }
         
 
      onSignup(){
