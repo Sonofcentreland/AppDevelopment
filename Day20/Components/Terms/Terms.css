@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.terms.border *{
+     padding: 0;
+     margin: 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     font-family: 'Poppins', sans-serif;
+}
+.terms.border{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     background-color: rgba(163, 221, 245, 0.63);
+}
+.terms.header{
+     width: 100%;
+     aspect-ratio: 8/1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 30px;
+     background-color: rgb(54, 2, 54);
+     color: white;
+}
+
+.terms.intro{
+     width: 80%;
+     aspect-ratio: 12/1;
+     padding: 1%;
+     text-align: center;
+     background-color: rgb(0, 140, 255);
+     border-radius: 5px;
+     font-weight: bolder;
+     color: white;
+}
+.terms.point{
+     width: 80%;
+     padding: 1%;
+     flex-direction: column;
+     align-items: flex-start;
+     background-color: rgb(0, 0, 0);
+     border-radius: 5px;
+     font-weight: bolder;
+     color: white;
+}
+.terms.point:hover{
+     width: 95%;
+     transition: 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.terms.point p{
+     padding: 1%;
+     font-weight: bold;
+}
+.terms.footer *{
+     align-items: flex-start;
+     justify-content: start;
+}
+.terms.footer{
+     background-color: rgb(51, 6, 94);
+}

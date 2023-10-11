@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.home.border *{
+     padding: 0;
+     margin: 0;
+     font-family: 'Poppins', sans-serif;
+}
+.home.border{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+}
+.home.navbar{
+     width: 100%;
+     aspect-ratio: 25/1;
+     position: fixed;
+}
+.home.header{
+     width: 97%;
+     aspect-ratio: 2.5/1;
+     display: flex;
+     align-self: center;
+     justify-content: space-evenly;
+     background-color: rgba(142, 202, 241, 0.37);
+     border-radius: 5px;
+     margin: 4rem 2rem;
+}
+.home.header .left{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     width: 53%;
+     height: 100%;
+     font-size: 30px;
+}
+.home.header .left .top{
+     width: 100%;
+     height: 70%;
+}
+.home.header .left .top .title{
+     width: 100%;
+     height: 70%;
+     font-size: 50px;
+     font-weight: 800;
+}
+.home.header .left .top .text{
+     width: 100%;
+     height: 30%;
+     font-size: 20px;
+}
+.home.header .left .bottom{
+     height: 21%;
+     width: 100%;
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     justify-content: flex-start;
+}
+.home.header .left .bottom .join, .home.header .left .bottom .about{
+     height: 50%;
+     width: 30%;
+     background-color: rgb(0, 0, 0);
+     color: white;
+     font-size: 17px;
+     font-weight: bolder;
+     border-radius: 25px;
+}
+.home.header .left .bottom .about{
+     width: 20%;
+     background-color: transparent;
+     color: black;
+}
+.home.header .left .bottom .join:hover{
+     transition: 0.3s;
+     font-size: 18px;
+     background-color: rgb(0, 110, 255);
+}
+.home.header .left .bottom .about:hover{
+     transition: 0.3s;
+     font-size: 18px;
+     color:  rgb(4, 31, 66);
+}
+.home.header .right{
+     width: 42%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+}
+.home.header .right .top{
+     width: 100%;
+     height: 94%;
+     border-radius: 5px;
+     object-fit: cover;
+     object-position: right center;
+}
+
+.home.reason{
+     width: 100%;
+     aspect-ratio: 2/0.6;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: rgb(248, 248, 248);
+}
+.home.reason .top{
+     width: 70%;
+     height: 50%;
+     text-align: center;
+     /* background-color: aqua; */
+}
+.home.reason .top .title{
+     width: 100%;
+     height: 20%;
+     margin: 3%;
+     font-size: 29px;
+     font-weight: 800;
+}
+.home.reason .top .text{
+     width: 70%;
+     height: 80%;
+     font-size: 15px;
+}
+.home.reason .bottom{
+     width: 100%;
+     height: 50%;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     text-align: center;
+}
+
+.home.reason .bottom .box{
+     width: 15%;
+     height: 60%;
+}
+.home.reason .bottom .box .icon{
+     display: flex;
+     align-items: center;
+     fill: orangered;
+     padding: 8%;
+     border-radius: 50%;
+     background-color: rgba(248, 192, 171, 0.616);
+}
+.home.reason .bottom .box .title{
+     text-align: center;
+     font-size: 25px;
+     font-weight: bolder;
+}
+.home.reason .bottom .box .text{
+     text-align: center;
+     font-size: 13px;
+     font-weight: bolder;
+}
+.home.footer {
+     width: 100%;
+     aspect-ratio: 2/0.5;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+     background-color: rgb(1, 53, 53);
+}
+.home.footer .top{
+     display: flex;
+     justify-content: space-between;
+     width: 90%;
+     height: 75%;
+     align-items: flex-end;
+     border-bottom: 2px solid grey;
+}
+.home.footer .top .left{
+     width: 58%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+.home.footer .top .left .textbox .title{
+     width: 100%;
+     font-size: 28px;
+     margin: 2%;
+     font-weight: bolder;
+     color: white;
+}
+.home.footer .top .left .textbox .text{
+     width: 100%;
+     font-size: 13px;
+     color: white;
+}
+.home.footer .top .center{
+     width: 20%;
+     height: 90%;
+     display: flex;
+     flex-direction: column;
+     gap: 7%;
+     color: white;
+}
+.home.footer .top .right{
+     width: 20%;
+     height: 90%;
+     display: flex;
+     flex-direction: column;
+     gap: 7%;
+     color: white;
+}
+.home.footer .top .right p{
+     font-weight: bolder;
+     font-size: 19px;
+}
+.home.footer .top .center p{
+     font-weight: bolder;
+     font-size: 19px;
+}
+.home.footer .bottom{
+     width: 90%;
+     height: 25%;
+     display: flex;
+     color: white;
+     font-size: 13px;
+}
+.home.footer .bottom .left{
+     width: 70%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+}
+.home.footer .bottom .right{
+     width: 30%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 10%;
+}

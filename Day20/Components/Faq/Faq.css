@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.faq.border *{
+     padding: 0;
+     margin: 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     font-family: 'Poppins', sans-serif;
+}
+.faq.border{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
+     background-color: rgb(104, 104, 104);
+}
+.faq.title{
+     width: 100%;
+     aspect-ratio: 8/1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-size: 30px;
+     background-color: rgb(54, 2, 54);
+     color: white;
+}
+.faq.header{
+     width: 97%;
+     aspect-ratio: 2.5/1;
+     display: flex;
+     align-self: center;
+     justify-content: space-evenly;
+     background-color: rgba(142, 202, 241, 0.37);
+     border-radius: 5px;
+     margin: 1rem 2rem;
+}
+.faq.header .left{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     width: 53%;
+     height: 100%;
+     font-size: 30px;
+     color: white;
+}
+.faq.header .left .top{
+     width: 100%;
+     height: 70%;
+}
+.faq.header .left .top .title{
+     width: 100%;
+     height: 70%;
+     font-size: 50px;
+     font-weight: 800;
+}
+.faq.header .left .top .text{
+     width: 100%;
+     height: 30%;
+     font-size: 20px;
+}
+.faq.header .left .bottom{
+     height: 21%;
+     width: 100%;
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     justify-content: flex-start;
+}
+.faq.header .left .bottom .join, .faq.header .left .bottom .faq{
+     height: 50%;
+     width: 30%;
+     background-color: rgb(248, 232, 197);
+     color: black;
+     font-size: 17px;
+     font-weight: bolder;
+     border-radius: 25px;
+}
+.faq.header .left .bottom .faq{
+     width: 20%;
+     background-color: transparent;
+     color: black;
+}
+.faq.header .left .bottom .join:hover{
+     transition: 0.3s;
+     font-size: 18px;
+     background-color: black;
+     color: white;
+}
+.faq.header .left .bottom .faq:hover{
+     transition: 0.3s;
+     font-size: 18px;
+     color: white;
+}
+.faq.header .right{
+     width: 42%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+}
+.faq.header .right .top{
+     width: 100%;
+     height: 94%;
+     border-radius: 5px;
+     object-fit: contain;
+     object-position: right center;
+}
+.faq.intro{
+     width: 80%;
+     aspect-ratio: 12/1;
+     padding: 1%;
+     text-align: center;
+     background-color: rgb(0, 140, 255);
+     border-radius: 5px;
+     font-weight: bolder;
+     color: white;
+}
+.faq.point{
+     width: 80%;
+     padding: 1%;
+     flex-direction: row-reverse;
+     align-items: flex-start;
+     justify-content: space-between;
+     border-radius: 5px;
+     font-weight: bolder;
+     color: white;
+}
+.faq.point .right{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 4%;
+     aspect-ratio: 1/1;
+     border-radius: 5px;
+     background-color: black;
+}
+.faq.point .left{
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: center;
+     background-color: rgb(255,174,0);
+     color: black;
+     padding: 1%;
+     border-radius: 5px;
+     width: 92%;
+     aspect-ratio: 12/1;
+}
+.faq.point .bottom{
+     width: 0;
+     height: 0;
+     visibility: hidden;
+}
+.faq.point .right .top{
+     width: 100%;
+     height: 100%;
+     border-radius: 5px;
+     object-fit: contain;
+}
+.faq.point .right:hover{
+     font-size: 28px;
+     transform: rotate(45deg);
+     border-radius: 50%;
+     transition: 1s;
+}
+.faq.point .right:hover ~ .left{
+     width: 92%;
+     aspect-ratio: 2/0.2;
+     background-color: white;
+}
+.faq.point .right:hover ~ .left .top{
+     visibility: visible;
+     width: 100%;
+     height: 50%;
+}
+.faq.point .right:hover ~ .left .bottom{
+     visibility: visible;
+     width: 100%;
+     height: 50%;
+     text-align: center;
+}
+.faq.footer *{
+     align-items: flex-start;
+     justify-content: start;
+}
+.faq.footer{
+     background-color: rgb(51, 6, 94);
+}
